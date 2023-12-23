@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Bookmarker</title>
+    <link rel="shortcut icon" href="img/2899445.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/all.css">
+</head>
+
+<body>
+    <div class="container w-100 text-center mt-5">
+        <!-- header -->
+        <h1 class="py-2 w-auto mx-auto">Bookmarker</h1>
+        <!-- input -->
+        <div class="input p-1 mt-5 d-flex justify-content-center align-items-center flex-wrap">
+            <p class="w-100"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i
+                    class="fa-solid fa-bookmark"></i></p>
+            <label for="BookName" class="w-100 text-start mb-2 ms-3 fw-bold"><i
+                    class="fa-solid fa-book-bookmark pe-2"></i> Site
+                Name</label>
+            <div class="form-floating w-100 mb-4">
+                <input id="BookName" type="text" class="w-100 form-control " placeholder="Site Name">
+                <label for="BookName">Book Name</label>
+            </div>
+            <label for="BookSite" class="w-100 text-start mb-2 ms-3 fw-bold"><i class="fa-solid fa-link pe-2"></i> Site
+                URL</label>
+            <div class="form-floating w-100">
+                <input id="BookSite" type="text" class="w-100 form-control " placeholder="Site URL">
+                <label for="BookSite">Web-site URL</label>
+            </div>
+            <button id="submitData" class="btn btn-danger mt-4 px-5">Add Book</button>
+            <button id="clearData" class="btn btn-warning d-none mt-4 px-5 ms-2" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">Clear All</button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-3" id="staticBackdropLabel">Delete Message</h2>
+                        </div>
+                        <div class="modal-body fw-bold fs-2 text-danger">
+                            Are you sure to delete all books from memory
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" id="DeleteItems"
+                                data-bs-dismiss="modal">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Validate Alert -->
+        <div class="Validation d-none d-flex justify-content-center align-items-center position-fixed top-0 start-0"
+            id="ValidateMess">
+            <div class="alert  my-style rounded-3 d-flex justify-content-center align-items-center flex-wrap">
+                <button type="button" class="btn-close fs-4" id="CloseValid"></button>
+                <p class="w-100 fs-3">Site Name or Url is not valid, Please follow the rules below :</p>
+                <h2>😊😊😊😊😊😊😊😊</h2>
+                <ul>
+                    <li>Site name must contain at least 3 characters max 10 characters and all characters must be
+                        Minuscule</li>
+                    <li>Site URL must be a valid one</li>
+                </ul>
+            </div>
+        </div>
+        <!-- search -->
+        <input type="text" placeholder="Search by name ....." class="w-50 mx-auto p-1 form-control mt-4"
+            onkeyup="Search(this.value)">
+        <!-- table -->
+        <table class="table table-dark mt-4 table-striped ">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyID">
+            </tbody>
+        </table>
+    </div>
+    <script src="JS/all.js"></script>
+    <script src="JS/Bookmarker.js"></script>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>

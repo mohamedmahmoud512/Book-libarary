@@ -1,0 +1,123 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+body {
+    background-color: #f9e6cc;
+}
+
+.form-control:focus {
+    border-color: #fee486;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(249, 199, 80, 0.842);
+}
+
+.container h1 {
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 500;
+    line-height: 60px;
+    color: #352e28;
+    position: relative;
+    width: max-content !important;
+}
+
+.container h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    bottom: 10px;
+    background-color: #fec260;
+    transition: height 350ms;
+    z-index: -1;
+}
+
+.container h1:hover::before {
+    height: 50%;
+}
+
+.input {
+    border-top: 2px dotted black;
+    border-bottom: 2px dotted black;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+}
+
+.input p {
+    font-family: 'Righteous', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    background: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #3ca55c;
+}
+
+.Validation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000005f;
+    z-index: 10;
+}
+
+.my-style {
+    background-color: #fcf9f5;
+    height: max-content;
+    width: 60%;
+    padding: 5%;
+    animation-name: animation;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animation {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.my-style button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.my-style p {
+    font-family: 'Bree Serif', serif;
+    font-weight: 400;
+    font-size: 21px;
+    text-align: start;
+    margin-left: 25px;
+    color: #352e28;
+}
+
+.my-style ul {
+    font-family: 'Bree Serif', serif;
+    font-size: 21px;
+    text-align: start;
+    margin-left: 30px;
+    color: #352e28;
+}
