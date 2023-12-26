@@ -71,23 +71,28 @@ function NameType() {
 function SiteType() {
     if (BookSite.value == "") {
         resetInValid();
+        return false;
     }
     if (BookSite.value == "") {
         resetValid();
+        return false;
     }
     if (validateLink(BookSite.value) == false) {
         BookSite.classList.add("is-invalid");
         if (BookSite.value == "") {
             resetInValid();
+            return false;
         }
         return false;
     } else {
         if (BookSite.value == "") {
             resetValid();
+            return false;
         }
         if (BookSite.classList.replace("is-invalid", "is-valid") == false) {
             if (BookSite.value == "") {
                 resetValid();
+                return false;
             }
             BookSite.classList.add("is-invalid");
             BookSite.classList.replace("is-invalid", "is-valid");
@@ -96,6 +101,7 @@ function SiteType() {
             BookSite.classList.replace("is-invalid", "is-valid");
             if (BookSite.value == "") {
                 resetValid();
+                return false;
             }
             return true;
         }
@@ -106,7 +112,7 @@ function AddToLibrary() {
         Name: BookName.value,
         Site: BookSite.value,
     }
-    if (NameType() && SiteType) {
+    if (NameType() && SiteType()) {
         BooksList.unshift(Book);
         if (BooksList.length != 0) {
             btnClear.classList.replace("d-none", "d-block");
@@ -131,6 +137,9 @@ function CloseValid() {
     validateMess.classList.replace("d-flex", "d-none");
 }
 function validateName(Book) {
+    if(Book==""){
+        return false;
+    }
     var regexName = /^[a-z][a-z|0-9|\s]{2,10}$/;
     if (regexName.test(Book)) {
         return true;
